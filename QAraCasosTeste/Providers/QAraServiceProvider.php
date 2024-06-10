@@ -27,7 +27,7 @@ class QAraServiceProvider extends ServiceProviderAbstract
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/qara.php' => config_path('qara.php'),
+                __DIR__.'/../Config/qara.php' => config_path('qara.php'),
             ]);
         }
         $this->moduleExists(ProjetosServiceProvider::class);
