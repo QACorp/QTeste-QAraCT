@@ -41,7 +41,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "QAraCasosTeste\\Providers\\QAraServiceProvider"
+        "App\\Modules\\QAraCasosTeste\\Providers\\QAraServiceProvider"
       ]
     }
   }
