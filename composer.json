@@ -3,7 +3,7 @@
   "description": "Módulo do QAKit para gerar casos de testes via ChatGPT",
   "keywords": ["laravel","php", "openai", "sdk", "codex", "GPT-3", "DALL-E", "api", "client", "natural", "language", "processing"],
   "license": "MIT",
-  "version": "v0.0.3",
+  "version": "v0.0.4",
   "authors": [
     {
       "name": "Marco Aurélio Lima Fernandes",
