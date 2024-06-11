@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'QAKit - Projetos')
+@section('title', 'QTeste - Projetos')
 @section('plugins.Select2', true)
 @section('content_header')
     <div class="row">

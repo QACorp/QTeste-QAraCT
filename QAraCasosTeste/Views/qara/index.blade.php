@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'QAKit - Projetos')
+@section('title', 'QTeste - Projetos')
 @section('plugins.Select2', true)
 @section('content_header')
     <div class="row">
@@ -19,7 +19,7 @@
                 <div class="card-body">
                     <div class="alert alert-default-warning">
                         <i class="fas fa-robot"></i>
-                        Seja bem-vindo(a) a QAra! Aqui você pode utilizar a IA do QAKit para gerar casos de testes baseado
+                        Seja bem-vindo(a) a QAra! Aqui você pode utilizar a IA do qteste para gerar casos de testes baseado
                         em um documento com os requisitos do projeto.
                     </div>
                     <form action="{{ route('caso-teste.qara.gerar-texto') }}" method="post" enctype="multipart/form-data">
