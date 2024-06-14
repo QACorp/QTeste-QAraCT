@@ -9,7 +9,6 @@ return [
                         'text' => 'Casos de testes',
                         'key' => 'casos_teste_qara_index',
                         'route'  => 'caso-teste.qara.index',
-                        'classes' => 'ml-4',
                         'icon'  => 'fas fa-file-alt',
                         'active' => ['projetos/qara/casos-teste/*'],
                         'label' => 'Novo',
