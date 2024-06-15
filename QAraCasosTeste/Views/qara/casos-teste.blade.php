@@ -49,7 +49,7 @@
                                                     name="titulo[]"
                                                     placeholder="Título"
                                                     fgroup-class="col-md-12"
-                                                    value="{{ old('titulo',$casoTeste->titulo) }}"
+                                                    value="{{ old('titulo.'.$key,$casoTeste->titulo) }}"
                                                 />
                                             </div>
                                             <div class="col-md-6">
@@ -58,7 +58,7 @@
                                                     name="requisito[]"
                                                     placeholder="Requisito"
                                                     fgroup-class="col-md-12"
-                                                    value="{{ old('requisito',$casoTeste->requisito) }}"
+                                                    value="{{ old('requisito.'.$key,$casoTeste->requisito) }}"
                                                 />
                                             </div>
 
@@ -71,7 +71,7 @@
                                                     placeholder="Quando usuário estiver logado..."
                                                     fgroup-class="col-md-12"
                                                 >
-                                                    {{ old('cenario',$casoTeste->cenario) }}
+                                                    {{ old('cenario.'.$key,$casoTeste->cenario) }}
                                                 </x-adminlte-textarea>
                                             </div>
                                         </div>
@@ -83,7 +83,7 @@
                                                     placeholder="Clicar no botão..."
                                                     fgroup-class="col-md-12"
                                                 >
-                                                    {{ old('teste',$casoTeste->teste) }}
+                                                    {{ old('teste.'.$key,$casoTeste->teste) }}
                                                 </x-adminlte-textarea>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                                     placeholder="Deverá aparecer..."
                                                     fgroup-class="col-md-12"
                                                 >
-                                                    {{ old('resultado_esperado',$casoTeste->resultado_esperado) }}
+                                                    {{ old('resultado_esperado.'.$key,$casoTeste->resultado_esperado) }}
                                                 </x-adminlte-textarea>
                                             </div>
                                         </div>

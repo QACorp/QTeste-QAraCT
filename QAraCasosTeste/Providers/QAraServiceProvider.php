@@ -26,7 +26,7 @@ class QAraServiceProvider extends ServiceProviderAbstract
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__.'/../Config/qara.php', $this->prefix);
+        $this->mergeConfigFrom(__DIR__.'/../Config/qara.php', 'qara');
 
     }
     public function boot(): void

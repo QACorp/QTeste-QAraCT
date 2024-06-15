@@ -13,6 +13,7 @@ use App\Modules\QAraCasosTeste\Enums\PermissionEnum;
 use App\System\DTOs\EquipeDTO;
 use App\System\Exceptions\NotFoundException;
 use App\System\Exceptions\UnauthorizedException;
+use App\System\Exceptions\UnprocessableEntityException;
 use App\System\Http\Controllers\Controller;
 use App\System\Traits\EquipeTools;
 use App\System\Utils\EquipeUtils;
@@ -48,6 +49,7 @@ class QAraController
         }
     }
 
+
     public function salvar(Request $request)
     {
         $casosTeste = Collection::empty();
@@ -73,6 +75,11 @@ class QAraController
         }catch (NotFoundException $e) {
             return redirect(route('aplicacoes.casos-teste.index'))
                 ->with([Controller::MESSAGE_KEY_ERROR => ['Registro não encontrado.']]);
+        }catch (UnprocessableEntityException $e) {
+            return redirect(route('caso-teste.qara.gerar-texto'))
+                ->withErrors($e->getValidator())
+                ->withInput()
+                ->with([Controller::MESSAGE_KEY_ERROR => ['Todos os campos são obrigatórios.']]);
         }
 
 
