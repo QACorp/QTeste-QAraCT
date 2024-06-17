@@ -34,12 +34,8 @@ class QAraCasosTesteBusiness extends BusinessAbstract implements QAraCasosTesteB
 
     public function gerarTextoIA(QAraCasosTesteDTO $qaraCasosTesteDTO, int $idEquipe): DataCollection
     {
-
         $aplicacao = $this->aplicacaoBusiness->buscarPorId($qaraCasosTesteDTO->idAplicacao,$idEquipe);
-
         $projeto = $this->projetoBusiness->buscarPorIdProjeto($qaraCasosTesteDTO->idProjeto, $idEquipe);
-
-
         $casosTeste = QAraCasosTesteModel::gerarTexto(
             QAraMessageDTO::collection([
                 QAraMessageDTO::from([
