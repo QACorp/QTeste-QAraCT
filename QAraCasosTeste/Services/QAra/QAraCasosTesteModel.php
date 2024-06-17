@@ -14,7 +14,8 @@ class QAraCasosTesteModel extends QAraModelAbstract
 
     public static function gerarTexto(DataCollection $message): DataCollection
     {
-        $content =  QAra::getChat(QAraMessageDTO::collection([
+        $qara = QAra::factory(env('OPENAI_API_KEY'));
+        $content =  $qara->getChat(QAraMessageDTO::collection([
             QAraMessageDTO::from([
                 'role' => QAraRoleEnum::SYSTEM->value,
                 'content' => 'Você responderá como se fosse um profissional de qualidade de software com conhecimento sobre TDD e elaboração de casos de testes'
