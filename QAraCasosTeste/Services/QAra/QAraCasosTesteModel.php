@@ -3,18 +3,24 @@
 namespace App\Modules\QAraCasosTeste\Services\QAra;
 
 use App\Modules\Projetos\DTOs\CasoTesteDTO;
+use App\Modules\QAraCasosTeste\Providers\QAraServiceProvider;
 use App\System\Impl\QAraModelAbstract;
 use App\System\Services\Qara\DTOs\QAraMessageDTO;
 use App\System\Services\Qara\QAra;
 use App\System\Services\Qara\QAraRoleEnum;
+use App\System\Traits\Configuracao;
+use Illuminate\Support\Facades\App;
 use Spatie\LaravelData\DataCollection;
 
 class QAraCasosTesteModel extends QAraModelAbstract
 {
-
+    use Configuracao;
     public static function gerarTexto(DataCollection $message): DataCollection
     {
-        $qara = QAra::factory(env('OPENAI_API_KEY'));
+        $classCasosTesteModel = App::make(QAraCasosTesteModel::class);
+        $qara = QAra::factory(
+            $classCasosTesteModel->buscarConfiguracao(QAraServiceProvider::$prefix, 'OPENAPI_TOKEN')->valor
+        );
         $content =  $qara->getChat(QAraMessageDTO::collection([
             QAraMessageDTO::from([
                 'role' => QAraRoleEnum::SYSTEM->value,
