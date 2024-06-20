@@ -24,24 +24,17 @@ class QAraCasosTesteModel extends QAraModelAbstract
         $content =  $qara->getChat(QAraMessageDTO::collection([
             QAraMessageDTO::from([
                 'role' => QAraRoleEnum::SYSTEM->value,
-                'content' => 'Você responderá como se fosse um profissional de qualidade de software com conhecimento sobre TDD e elaboração de casos de testes'
-            ]),
-
-            QAraMessageDTO::from([
-                'role' => QAraRoleEnum::SYSTEM->value,
-                'content' => 'Escreva os casos de testes em JSON com o seguinte formato:{casos_teste:[
-                    {
-                        requisito: "decricao do requisito",
-                        titulo: "Título do requisito testado",
-                        cenario: "Cenário em que o teste está sendo executado",
-                        teste: "Os passos do teste",
-                        resultado_esperado: "Resultado esperado ao final do teste"
-                        }
-                ]}'
-            ]),
-            QAraMessageDTO::from([
-                'role' => QAraRoleEnum::USER,
-                'content' => 'Deve retornar uma lista com, no minimo, 10 casos de testes para os requisitos abaixo'
+                'content' => 'Você responderá como se fosse um profissional de qualidade de software com conhecimento sobre TDD e elaboração de casos de testes.
+                               Deve retornar uma lista com, no minimo, 10 casos de testes para os requisitos abaixo.
+                               Escreva os casos de testes em JSON com o seguinte formato:{casos_teste:[
+                                {
+                                    requisito: "decricao do requisito",
+                                    titulo: "Título do requisito testado",
+                                    cenario: "Cenário em que o teste está sendo executado",
+                                    teste: "Os passos do teste",
+                                    resultado_esperado: "Resultado esperado ao final do teste"
+                                    }
+                            ]}'
             ]),
             ...$message
         ]));
