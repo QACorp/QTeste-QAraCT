@@ -13,6 +13,7 @@ return [
                         'active' => ['qara/configuracao/*'],
                         'label' => 'Novo',
                         'label_color' => 'success',
+                        'classes' => 'ml-3',
                         'can'   => 'QARA_CASOS_TESTE_INSERIR',
                         'topnav_user' => true
                     ],
@@ -24,7 +25,8 @@ return [
                         'active' => ['qara/casos-teste*'],
                         'label' => 'Novo',
                         'label_color' => 'success',
-                        'can'   => 'QARA_CASOS_TESTE_INSERIR'
+                        'can'   => 'QARA_CASOS_TESTE_INSERIR',
+                        'classes' => 'ml-3',
                     ]
 
 
