@@ -17,7 +17,8 @@ use Illuminate\Support\ServiceProvider;
 
 class QAraServiceProvider extends ServiceProviderAbstract
 {
-    public static string $module_path = 'vendor/qacorp/qteste-qaract/QAraCasosTeste';
+//    public static string $module_path = 'vendor/qacorp/qteste-qaract/QAraCasosTeste';
+    public static string $module_path = __DIR__.'/..';
     public static string $prefix = 'qara';
     public static string $view_namespace = 'qara';
     public $bindings = [
