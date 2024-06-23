@@ -72,7 +72,9 @@
                                         Agora informe os requisitos para o qual quer criar os casos de testes.
                                     </div>
 
-                                    <x-adminlte-textarea name="requisitos" label="Requisitos" rows="15"></x-adminlte-textarea>
+                                    <x-adminlte-textarea name="requisitos" label="Requisitos" rows="15">
+                                        {{old('requisitos','')}}
+                                    </x-adminlte-textarea>
                                 </div>
                             </div>
 
